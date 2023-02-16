@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HR Employee Retention File Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+		h4 {
+            text-align: center;
+            color: #333333;
+        }
+        form {
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #dddddd;
+        }
+        input[type="file"] {
+            display: block;
+            margin: 0 auto;
+        }
+        input[type="submit"] {
+            background-color: #008CBA;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #005580;
+        }
+    </style>
+</head>
+<body>
+	<h1>HR Employee Retention </h1>
+    <h4>Select a file to upload and click upload. Result file will be downloaded in same folder.</h4>
+    <form action="{{ url_for('file_upload') }}" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file"><br><br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
+

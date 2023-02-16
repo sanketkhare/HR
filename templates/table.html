@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediction Results</title>
+
+  <style>
+      /* Add some basic styling to the table */
+      .table-container {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 20px;
+      }
+      th, td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+      th {
+        background-color: #eee;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Prediction Results is in column target. One means employee is at risk of attrition and Zero means there is no risk.</h1>
+    <table>
+      <thead>
+        <tr>
+          {% for col in pre_result.columns %}
+            <th>{{ col }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for index, row in pre_result.iterrows() %}
+          <tr>
+            {% for col in pre_result.columns %}
+              <td>{{ row[col] }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
